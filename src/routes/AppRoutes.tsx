@@ -4,6 +4,7 @@ import Dashboard from '../pages/Dashboard';
 import CategoryPage from '../pages/CategoryPage';
 import ToolPage from '../pages/ToolPage';
 import Settings from '../pages/Settings';
+import CalculatorPage from '../pages/tools/CalculatorPage';
 import { categories, tools } from '../data/tools';
 
 export default function AppRoutes() {
@@ -18,10 +19,15 @@ export default function AppRoutes() {
           <Route key={cat.id} path={`/${cat.id}`} element={<CategoryPage />} />
         ))}
 
-        {/* Tool routes */}
-        {tools.map((tool) => (
-          <Route key={tool.id} path={tool.route} element={<ToolPage />} />
-        ))}
+        {/* Dedicated Tool routes */}
+        <Route path="/calculators/calculator" element={<CalculatorPage />} />
+
+        {/* Placeholder tool routes */}
+        {tools
+          .filter((tool) => tool.route !== '/calculators/calculator')
+          .map((tool) => (
+            <Route key={tool.id} path={tool.route} element={<ToolPage />} />
+          ))}
 
         {/* Settings */}
         <Route path="/settings" element={<Settings />} />
