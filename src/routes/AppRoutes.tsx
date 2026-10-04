@@ -1,0 +1,34 @@
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Layout from '../components/layout/Layout';
+import Dashboard from '../pages/Dashboard';
+import CategoryPage from '../pages/CategoryPage';
+import ToolPage from '../pages/ToolPage';
+import Settings from '../pages/Settings';
+import { categories, tools } from '../data/tools';
+
+export default function AppRoutes() {
+  return (
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Navigate to="/" replace />} />
+
+        {/* Category routes */}
+        {categories.map((cat) => (
+          <Route key={cat.id} path={`/${cat.id}`} element={<CategoryPage />} />
+        ))}
+
+        {/* Tool routes */}
+        {tools.map((tool) => (
+          <Route key={tool.id} path={tool.route} element={<ToolPage />} />
+        ))}
+
+        {/* Settings */}
+        <Route path="/settings" element={<Settings />} />
+
+        {/* Fallback */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Route>
+    </Routes>
+  );
+}
