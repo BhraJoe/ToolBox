@@ -4,6 +4,7 @@ interface CalculatorDisplayProps {
   error: string | null;
 }
 
+
 export default function CalculatorDisplay({
   expression,
   value,
