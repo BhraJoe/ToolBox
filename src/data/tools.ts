@@ -101,7 +101,7 @@ export const tools: Tool[] = [
     category: "calculators",
     icon: "percent",
     route: "/calculators/percentage-calculator",
-    status: "coming-soon",
+    status: "available",
   },
   {
     id: "age-calculator",

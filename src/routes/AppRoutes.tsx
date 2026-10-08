@@ -7,6 +7,7 @@ import Settings from '../pages/Settings';
 import CalculatorPage from '../pages/tools/CalculatorPage';
 import PasswordGeneratorPage from '../pages/tools/PasswordGeneratorPage';
 import UnitConverterPage from '../pages/tools/UnitConverterPage';
+import PercentageCalculatorPage from '../pages/tools/PercentageCalculatorPage';
 import { categories, tools } from '../data/tools';
 
 export default function AppRoutes() {
@@ -25,6 +26,7 @@ export default function AppRoutes() {
         <Route path="/calculators/calculator" element={<CalculatorPage />} />
         <Route path="/developer/password-generator" element={<PasswordGeneratorPage />} />
         <Route path="/calculators/unit-converter" element={<UnitConverterPage />} />
+        <Route path="/calculators/percentage-calculator" element={<PercentageCalculatorPage />} />
 
         {/* Placeholder tool routes */}
         {tools
