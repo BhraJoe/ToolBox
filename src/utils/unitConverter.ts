@@ -10,7 +10,7 @@ export type UnitCategory =
   | 'time'
   | 'data';
 
-interface CategoryUnits {
+type CategoryUnits = {
   [K in UnitCategory]?: UnitDefinition[];
 }
 
