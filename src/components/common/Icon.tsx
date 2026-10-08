@@ -58,6 +58,7 @@ import {
   Pen,
   Cpu,
   HelpCircle,
+  Key,
 } from 'lucide-react';
 import type { ComponentType } from 'react';
 
@@ -94,6 +95,7 @@ const iconMap: Record<string, ComponentType<LucideProps>> = {
   braces: Braces,
   'file-check': FileCheck,
   search: Search,
+  key: Key,
   'key-round': KeyRound,
   binary: Binary,
   fingerprint: Fingerprint,

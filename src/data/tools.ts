@@ -160,6 +160,15 @@ export const tools: Tool[] = [
     status: "coming-soon",
   },
   {
+    id: "password-generator",
+    name: "Password Generator",
+    description: "Generate strong and secure random passwords.",
+    category: "developer",
+    icon: "key",
+    route: "/developer/password-generator",
+    status: "available",
+  },
+  {
     id: "json-validator",
     name: "JSON Validator",
     description: "Validate JSON syntax and structure.",
