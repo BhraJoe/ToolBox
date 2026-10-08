@@ -146,7 +146,7 @@ export const tools: Tool[] = [
     category: "calculators",
     icon: "ruler",
     route: "/calculators/unit-converter",
-    status: "coming-soon",
+    status: "available",
   },
 
   // ── Developer ──────────────────────────────────────────────────────────

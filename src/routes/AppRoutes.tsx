@@ -6,6 +6,7 @@ import ToolPage from '../pages/ToolPage';
 import Settings from '../pages/Settings';
 import CalculatorPage from '../pages/tools/CalculatorPage';
 import PasswordGeneratorPage from '../pages/tools/PasswordGeneratorPage';
+import UnitConverterPage from '../pages/tools/UnitConverterPage';
 import { categories, tools } from '../data/tools';
 
 export default function AppRoutes() {
@@ -23,12 +24,13 @@ export default function AppRoutes() {
         {/* Dedicated Tool routes */}
         <Route path="/calculators/calculator" element={<CalculatorPage />} />
         <Route path="/developer/password-generator" element={<PasswordGeneratorPage />} />
+        <Route path="/calculators/unit-converter" element={<UnitConverterPage />} />
 
         {/* Placeholder tool routes */}
         {tools
-          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator')
-          .map((tool) => (
-            <Route key={tool.id} path={tool.route} element={<ToolPage />} />
+          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator' && tool.route !== '/calculators/unit-converter')
+          .map((t) => (
+            <Route key={t.id} path={t.route} element={<ToolPage />} />
           ))}
 
         {/* Settings */}
