@@ -10,6 +10,7 @@ import UnitConverterPage from '../pages/tools/UnitConverterPage';
 import PercentageCalculatorPage from '../pages/tools/PercentageCalculatorPage';
 import CurrencyConverterPage from '../pages/tools/CurrencyConverterPage';
 import AgeCalculatorPage from '../pages/tools/AgeCalculatorPage';
+import DateCalculatorPage from '../pages/tools/DateCalculatorPage';
 import { categories, tools } from '../data/tools';
 
 export default function AppRoutes() {
@@ -31,10 +32,11 @@ export default function AppRoutes() {
         <Route path="/calculators/percentage-calculator" element={<PercentageCalculatorPage />} />
         <Route path="/calculators/currency-converter" element={<CurrencyConverterPage />} />
         <Route path="/calculators/age-calculator" element={<AgeCalculatorPage />} />
+        <Route path="/calculators/date-calculator" element={<DateCalculatorPage />} />
 
         {/* Placeholder tool routes */}
         {tools
-          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator' && tool.route !== '/calculators/unit-converter' && tool.route !== '/calculators/percentage-calculator' && tool.route !== '/calculators/currency-converter' && tool.route !== '/calculators/age-calculator')
+          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator' && tool.route !== '/calculators/unit-converter' && tool.route !== '/calculators/percentage-calculator' && tool.route !== '/calculators/currency-converter' && tool.route !== '/calculators/age-calculator' && tool.route !== '/calculators/date-calculator')
           .map((t) => (
             <Route key={t.id} path={t.route} element={<ToolPage />} />
           ))}

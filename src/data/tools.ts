@@ -115,11 +115,11 @@ export const tools: Tool[] = [
   {
     id: "date-calculator",
     name: "Date Calculator",
-    description: "Calculate differences between dates.",
+    description: "Calculate date differences or add and subtract time.",
     category: "calculators",
     icon: "calendar-days",
     route: "/calculators/date-calculator",
-    status: "coming-soon",
+    status: "available",
   },
   {
     id: "loan-calculator",
