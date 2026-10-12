@@ -110,7 +110,7 @@ export const tools: Tool[] = [
     category: "calculators",
     icon: "calendar",
     route: "/calculators/age-calculator",
-    status: "coming-soon",
+    status: "available",
   },
   {
     id: "date-calculator",
@@ -139,15 +139,24 @@ export const tools: Tool[] = [
     route: "/calculators/salary-calculator",
     status: "coming-soon",
   },
-  {
-    id: "unit-converter",
-    name: "Unit Converter",
-    description: "Convert between units of measurement.",
-    category: "calculators",
-    icon: "ruler",
-    route: "/calculators/unit-converter",
-    status: "available",
-  },
+    {
+      id: "unit-converter",
+      name: "Unit Converter",
+      description: "Convert between units of measurement.",
+      category: "calculators",
+      icon: "ruler",
+      route: "/calculators/unit-converter",
+      status: "available",
+    },
+    {
+      id: "currency-converter",
+      name: "Currency Converter",
+      description: "Convert currencies using live exchange rates.",
+      category: "calculators",
+      icon: "arrow-left-right",
+      route: "/calculators/currency-converter",
+      status: "available",
+    },
 
   // ── Developer ──────────────────────────────────────────────────────────
   {

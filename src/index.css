@@ -2492,3 +2492,574 @@ input {
     width: 100%;
   }
 }
+
+/* ─── Age Calculator ─────────────────────────────────────────────────── */
+
+.age-calculator__card,
+.currency-converter__card {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.age-calculator__fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.age-calculator__field {
+  min-width: 0;
+}
+
+.age-calculator__label,
+.currency-converter__label,
+.currency-selector__label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.age-calculator__input,
+.amount-input__input,
+.currency-selector__search {
+  width: 100%;
+  padding: 12px 16px;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font: inherit;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.age-calculator__input:focus,
+.amount-input__input:focus,
+.currency-selector__search:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.age-calculator__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.age-calculator__button,
+.currency-converter__copy-btn,
+.currency-converter__refresh-btn {
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.age-calculator__button--primary,
+.currency-converter__refresh-btn {
+  color: var(--text-on-primary);
+  background: var(--color-primary);
+}
+
+.age-calculator__button--primary:hover:not(:disabled),
+.currency-converter__refresh-btn:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+.age-calculator__button--secondary,
+.currency-converter__copy-btn {
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+.age-calculator__button--secondary:hover:not(:disabled),
+.currency-converter__copy-btn:hover:not(:disabled) {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+.age-calculator__button:focus-visible,
+.currency-converter__copy-btn:focus-visible,
+.currency-converter__refresh-btn:focus-visible,
+.currency-converter__swap-btn:focus-visible,
+.currency-selector__header:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.age-calculator__button:disabled,
+.currency-converter__copy-btn:disabled,
+.currency-converter__refresh-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.age-calculator__error,
+.amount-input__error {
+  margin-top: 6px;
+  color: #dc2626;
+  font-size: 13px;
+}
+
+[data-theme='dark'] .age-calculator__error,
+[data-theme='dark'] .amount-input__error {
+  color: #f87171;
+}
+
+.age-calculator__notice {
+  margin-top: 12px;
+  color: #b45309;
+  font-size: 14px;
+}
+
+[data-theme='dark'] .age-calculator__notice {
+  color: #fbbf24;
+}
+
+.age-calculator__result {
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--color-primary-light);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius);
+}
+
+.age-calculator__result-title {
+  margin-bottom: 8px;
+  color: var(--color-primary);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.age-calculator__result-value {
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.age-calculator__birthday {
+  margin-top: 4px;
+  color: #16a34a;
+  font-size: 14px;
+}
+
+.age-calculator__statistics {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.age-calculator__statistics-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.age-calculator__statistics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.age-calculator__statistic {
+  padding: 12px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  font-size: 14px;
+}
+
+.age-calculator__statistic--wide {
+  grid-column: 1 / -1;
+}
+
+.age-calculator__statistic-label,
+.age-calculator__footnote {
+  color: var(--text-tertiary);
+}
+
+.age-calculator__statistic-value {
+  margin-left: 8px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.age-calculator__footnote {
+  font-size: 12px;
+}
+
+/* ─── Currency Converter ─────────────────────────────────────────────── */
+
+.currency-converter {
+  width: 100%;
+}
+
+.currency-converter__header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.currency-converter__header h2 {
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.currency-converter__header p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.currency-converter__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.currency-converter__row-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.currency-converter__selectors {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: end;
+  min-width: 0;
+}
+
+.currency-selector {
+  min-width: 0;
+}
+
+.currency-selector__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 46px;
+  padding: 10px 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.currency-selector__header:hover,
+.currency-selector__header--open {
+  background: var(--bg-hover);
+  border-color: var(--color-primary);
+}
+
+.currency-selector__header[aria-expanded='true'] {
+  border-color: var(--color-primary);
+}
+
+.currency-selector__selected {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+
+.currency-selector__code,
+.currency-selector__item-code {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.currency-selector__name,
+.currency-selector__item-name {
+  overflow: hidden;
+  color: var(--text-secondary);
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.currency-selector__arrow {
+  margin-left: 8px;
+  color: var(--text-tertiary);
+  font-size: 10px;
+}
+
+.currency-selector__list {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 4px);
+  right: 0;
+  left: 0;
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.currency-selector__search {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin-bottom: 6px;
+  background: var(--bg-card);
+}
+
+.currency-selector__item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.currency-selector__item:hover,
+.currency-selector__item--active {
+  background: var(--bg-hover);
+}
+
+.currency-selector__item-symbol {
+  margin-left: auto;
+  color: var(--text-tertiary);
+}
+
+.currency-selector__empty {
+  padding: 12px 10px;
+  color: var(--text-tertiary);
+  font-size: 14px;
+  text-align: center;
+}
+
+.currency-converter__swap-btn {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  font-size: 22px;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.currency-converter__swap-btn:hover:not(:disabled) {
+  background: var(--bg-hover);
+  transform: rotate(180deg);
+}
+
+.currency-converter__swap-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.currency-converter__exchange-rate {
+  min-width: 0;
+  padding: 14px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+}
+
+.currency-converter__rate-label,
+.currency-converter__result-label {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.currency-converter__rate-value {
+  margin-top: 4px;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.currency-converter__rate-value--error {
+  color: #dc2626;
+  font-weight: 400;
+}
+
+.currency-converter__rate-reverse {
+  margin-top: 4px;
+  color: var(--text-tertiary);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.currency-converter__result-section {
+  padding: 16px;
+  background: var(--color-primary-light);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+}
+
+.currency-converter__result-value {
+  margin-top: 4px;
+  color: var(--color-primary);
+  font-size: 30px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.currency-converter__actions {
+  display: flex;
+}
+
+.currency-converter__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.currency-converter__timestamp {
+  color: var(--text-tertiary);
+  font-size: 12px;
+}
+
+@media (max-width: 1023px) {
+  .currency-converter__footer {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .currency-converter__timestamp {
+    margin-bottom: 8px;
+  }
+
+  .currency-converter__refresh-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .age-calculator__card,
+  .currency-converter__card {
+    padding: 16px;
+  }
+
+  .age-calculator__fields,
+  .age-calculator__statistics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .age-calculator__statistic--wide {
+    grid-column: auto;
+  }
+
+  .age-calculator__result-value {
+    font-size: 20px;
+  }
+
+  .currency-converter__selectors {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .currency-converter__swap-btn {
+    justify-self: center;
+    transform: rotate(90deg);
+  }
+
+  .currency-converter__swap-btn:hover:not(:disabled) {
+    transform: rotate(270deg);
+  }
+
+  .currency-converter__result-value {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .currency-converter__row-section {
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .currency-converter__selectors {
+    flex: 1;
+    min-width: 320px;
+  }
+
+  .currency-converter__exchange-rate {
+    order: 3;
+    width: 200px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .currency-converter__row-section {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .currency-converter__exchange-rate {
+    width: 100%;
+    order: 0;
+  }
+
+  .currency-converter__selectors {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .currency-converter__row-section {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .currency-converter__selectors {
+    width: 100%;
+  }
+
+  .currency-converter__exchange-rate {
+    width: 100%;
+    order: 0;
+    margin-bottom: 16px;
+  }
+
+  .currency-converter__controls {
+    gap: 16px;
+  }
+
+  .currency-converter__controls > div {
+    margin-bottom: 16px;
+  }
+
+  .currency-converter__footer {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .currency-converter__refresh-btn {
+    width: 100%;
+  }
+}
