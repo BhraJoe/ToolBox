@@ -78,7 +78,6 @@ function validateResponse(data: any, expectedAmount: number): ExchangeRateRespon
 
 export async function fetchExchangeRates(
   baseCurrency: string,
-  targetCurrency: string,
   amount: number = 1
 ): Promise<ExchangeRateResponse> {
   const url = `${API_BASE_URL}/${API_KEY}/latest/${baseCurrency.toUpperCase()}`;
@@ -157,7 +156,7 @@ export async function getExchangeRate(
   }
 
   // Fetch fresh rates.
-  const response = await fetchExchangeRates(from, to, 1);
+  const response = await fetchExchangeRates(from, 1);
 
   if (!response.rates[to]) {
     throw new CurrencyServiceError(

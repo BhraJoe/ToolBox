@@ -125,7 +125,7 @@ export default function CurrencyConverter() {
     try {
       const amountValue = parseFloat(amount) || 1;
 
-      await fetchExchangeRates(fromCurrency.code, toCurrency.code, amountValue);
+      await fetchExchangeRates(fromCurrency.code, amountValue);
 
       const { result, rate, date } = await convertCurrency(
         amountValue,
