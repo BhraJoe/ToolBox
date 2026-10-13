@@ -1665,6 +1665,274 @@ input {
   }
 }
 
+/* ─── Text Case Converter ─────────────────────────────────────────────── */
+
+.text-case-converter {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  min-width: 0;
+}
+
+.text-case-converter__card {
+  min-width: 0;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.text-case-converter__section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.text-case-converter__section-heading h2 {
+  color: var(--text-primary);
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.text-case-converter__section-heading p {
+  margin-top: 3px;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.text-case-converter__input-actions,
+.text-case-converter__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.text-case-converter__button {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 13px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 600;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.text-case-converter__button:focus-visible,
+.text-case-converter__format-option:focus-visible,
+.text-case-converter__textarea:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.text-case-converter__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.text-case-converter__button--secondary {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.text-case-converter__button--secondary:hover:not(:disabled) {
+  background: var(--bg-hover);
+  border-color: var(--color-primary-light);
+  color: var(--text-primary);
+}
+
+.text-case-converter__button--primary {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--text-on-primary);
+}
+
+.text-case-converter__button--primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.text-case-converter__textarea {
+  display: block;
+  width: 100%;
+  min-height: 190px;
+  padding: 14px 16px;
+  resize: vertical;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font: 14px/1.65 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.text-case-converter__textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.text-case-converter__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 11px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.text-case-converter__format-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.text-case-converter__format-group {
+  min-width: 0;
+  border: 0;
+}
+
+.text-case-converter__format-group legend {
+  margin-bottom: 9px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.text-case-converter__format-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 145px), 1fr));
+  gap: 9px;
+}
+
+.text-case-converter__format-option {
+  min-height: 42px;
+  padding: 8px 11px;
+  overflow-wrap: anywhere;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.text-case-converter__format-option:hover {
+  border-color: var(--color-primary-light);
+  color: var(--text-primary);
+}
+
+.text-case-converter__format-option--selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.text-case-converter__format-note {
+  margin-top: 14px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.text-case-converter__output-card {
+  overflow: hidden;
+}
+
+.text-case-converter__textarea--output {
+  min-height: 160px;
+  max-height: 560px;
+}
+
+.text-case-converter__empty {
+  display: flex;
+  min-height: 160px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 24px;
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+  text-align: center;
+}
+
+.text-case-converter__empty p {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.text-case-converter__empty span {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.text-case-converter__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.text-case-converter__message {
+  flex: 1 1 250px;
+  font-size: 13px;
+}
+
+.text-case-converter__message--success {
+  color: #15803d;
+}
+
+.text-case-converter__message--error {
+  color: #b91c1c;
+}
+
+.text-case-converter__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .text-case-converter__card {
+    padding: 18px;
+  }
+
+  .text-case-converter__section-heading {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .text-case-converter__input-actions > button {
+    flex: 1;
+  }
+
+  .text-case-converter__footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .text-case-converter__actions > button {
+    flex: 1;
+  }
+}
+
 /* ─── Unit Converter ────────────────────────────────────────────────────── */
 
 .unit-converter {

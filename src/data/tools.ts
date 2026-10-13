@@ -253,12 +253,12 @@ export const tools: Tool[] = [
   },
   {
     id: "case-converter",
-    name: "Case Converter",
-    description: "Convert text between different cases.",
+    name: "Text Case Converter",
+    description: "Change text capitalization and naming formats.",
     category: "text",
     icon: "case-sensitive",
     route: "/text/case-converter",
-    status: "coming-soon",
+    status: "available",
   },
   {
     id: "text-formatter",
