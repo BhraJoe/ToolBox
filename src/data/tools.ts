@@ -240,7 +240,7 @@ export const tools: Tool[] = [
     category: "text",
     icon: "file-text",
     route: "/text/word-counter",
-    status: "coming-soon",
+    status: "available",
   },
   {
     id: "character-counter",

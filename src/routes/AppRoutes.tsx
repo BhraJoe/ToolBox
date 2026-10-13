@@ -12,6 +12,7 @@ import CurrencyConverterPage from '../pages/tools/CurrencyConverterPage';
 import AgeCalculatorPage from '../pages/tools/AgeCalculatorPage';
 import DateCalculatorPage from '../pages/tools/DateCalculatorPage';
 import TextCaseConverterPage from '../pages/tools/TextCaseConverterPage';
+import WordCounterPage from '../pages/tools/WordCounterPage';
 import { categories, tools } from '../data/tools';
 
 export default function AppRoutes() {
@@ -35,10 +36,11 @@ export default function AppRoutes() {
         <Route path="/calculators/age-calculator" element={<AgeCalculatorPage />} />
         <Route path="/calculators/date-calculator" element={<DateCalculatorPage />} />
         <Route path="/text/case-converter" element={<TextCaseConverterPage />} />
+        <Route path="/text/word-counter" element={<WordCounterPage />} />
 
         {/* Placeholder tool routes */}
         {tools
-          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator' && tool.route !== '/calculators/unit-converter' && tool.route !== '/calculators/percentage-calculator' && tool.route !== '/calculators/currency-converter' && tool.route !== '/calculators/age-calculator' && tool.route !== '/calculators/date-calculator' && tool.route !== '/text/case-converter')
+          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator' && tool.route !== '/calculators/unit-converter' && tool.route !== '/calculators/percentage-calculator' && tool.route !== '/calculators/currency-converter' && tool.route !== '/calculators/age-calculator' && tool.route !== '/calculators/date-calculator' && tool.route !== '/text/case-converter' && tool.route !== '/text/word-counter')
           .map((t) => (
             <Route key={t.id} path={t.route} element={<ToolPage />} />
           ))}
