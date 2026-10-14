@@ -59,6 +59,7 @@ import {
   Cpu,
   HelpCircle,
   Key,
+  FileDiff,
 } from 'lucide-react';
 import type { ComponentType } from 'react';
 
@@ -126,6 +127,7 @@ const iconMap: Record<string, ComponentType<LucideProps>> = {
   'user-check': UserCheck,
   pen: Pen,
   cpu: Cpu,
+  'file-diff': FileDiff,
 };
 
 interface IconProps extends LucideProps {

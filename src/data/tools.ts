@@ -261,6 +261,15 @@ export const tools: Tool[] = [
     status: "available",
   },
   {
+    id: "text-diff-checker",
+    name: "Text Diff Checker",
+    description: "Compare two text versions and highlight additions and removals.",
+    category: "text",
+    icon: "file-diff",
+    route: "/text/diff-checker",
+    status: "available",
+  },
+  {
     id: "text-formatter",
     name: "Text Formatter",
     description: "Format and clean up text content.",
