@@ -161,12 +161,12 @@ export const tools: Tool[] = [
   // ── Developer ──────────────────────────────────────────────────────────
   {
     id: "json-formatter",
-    name: "JSON Formatter",
-    description: "Format and beautify JSON data.",
+    name: "JSON Formatter & Validator",
+    description: "Format, validate, minify and inspect JSON data.",
     category: "developer",
     icon: "braces",
     route: "/developer/json-formatter",
-    status: "coming-soon",
+    status: "available",
   },
   {
     id: "password-generator",

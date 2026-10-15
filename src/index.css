@@ -4462,3 +4462,298 @@ input {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* ─── JSON Formatter & Validator ─────────────────────────────────────── */
+
+.json-formatter {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.json-formatter__toolbar,
+.json-formatter__toolbar-actions,
+.json-formatter__panel-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.json-formatter__toolbar {
+  justify-content: space-between;
+}
+
+.json-formatter__toolbar-actions {
+  gap: 9px;
+}
+
+.json-formatter__button {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.json-formatter__button:hover:not(:disabled) {
+  border-color: var(--color-primary-light);
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.json-formatter__button--primary {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--text-on-primary);
+}
+
+.json-formatter__button--primary:hover:not(:disabled) {
+  border-color: var(--color-primary-hover);
+  background: var(--color-primary-hover);
+  color: var(--text-on-primary);
+}
+
+.json-formatter__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.json-formatter__button:focus-visible,
+.json-formatter__textarea:focus-visible,
+.json-formatter__indentation select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.json-formatter__indentation {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.json-formatter__indentation select {
+  min-height: 38px;
+  padding: 6px 28px 6px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font: inherit;
+}
+
+.json-formatter__panels {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+}
+
+.json-formatter__card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.json-formatter__section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.json-formatter__section-heading h2 {
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.json-formatter__section-heading p {
+  margin-top: 3px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.json-formatter__panel-actions {
+  justify-content: flex-end;
+}
+
+.json-formatter__textarea {
+  display: block;
+  width: 100%;
+  min-height: 340px;
+  flex: 1;
+  padding: 14px;
+  resize: vertical;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font: 13px/1.65 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  tab-size: 2;
+  white-space: pre;
+  overflow: auto;
+}
+
+.json-formatter__textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.json-formatter__textarea--output {
+  background: var(--bg-tertiary);
+}
+
+.json-formatter__input-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.json-formatter__validation {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  overflow-wrap: anywhere;
+}
+
+.json-formatter__validation--valid,
+.json-formatter__message--success {
+  border-color: #86efac;
+  background: #f0fdf4;
+  color: #166534;
+}
+
+.json-formatter__validation--invalid,
+.json-formatter__validation--error,
+.json-formatter__message--error {
+  border-color: #fca5a5;
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+[data-theme='dark'] .json-formatter__validation--valid,
+[data-theme='dark'] .json-formatter__message--success {
+  border-color: #166534;
+  background: #052e16;
+  color: #bbf7d0;
+}
+
+[data-theme='dark'] .json-formatter__validation--invalid,
+[data-theme='dark'] .json-formatter__validation--error,
+[data-theme='dark'] .json-formatter__message--error {
+  border-color: #991b1b;
+  background: #450a0a;
+  color: #fecaca;
+}
+
+.json-formatter__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.json-formatter__stat {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+  padding: 9px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+}
+
+.json-formatter__stat span {
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+.json-formatter__stat strong {
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+.json-formatter__message {
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 13px;
+}
+
+.json-formatter__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 900px) {
+  .json-formatter__panels {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .json-formatter__toolbar {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .json-formatter__toolbar-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .json-formatter__indentation {
+    justify-content: space-between;
+  }
+
+  .json-formatter__card {
+    padding: 16px;
+  }
+
+  .json-formatter__section-heading {
+    flex-direction: column;
+  }
+
+  .json-formatter__panel-actions {
+    width: 100%;
+  }
+
+  .json-formatter__panel-actions > button {
+    flex: 1 1 calc(50% - 8px);
+  }
+
+  .json-formatter__textarea {
+    min-height: 260px;
+  }
+}
