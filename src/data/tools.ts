@@ -206,12 +206,12 @@ export const tools: Tool[] = [
   },
   {
     id: "base64-encoder",
-    name: "Base64 Encoder",
-    description: "Encode and decode Base64 strings.",
+    name: "Base64 Encoder & Decoder",
+    description: "Encode text to Base64 or decode Base64 into readable text.",
     category: "developer",
     icon: "binary",
-    route: "/developer/base64-encoder",
-    status: "coming-soon",
+    route: "/developer/base64-encoder-decoder",
+    status: "available",
   },
   {
     id: "uuid-generator",

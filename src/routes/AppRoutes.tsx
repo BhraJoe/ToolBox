@@ -15,6 +15,7 @@ import TextCaseConverterPage from '../pages/tools/TextCaseConverterPage';
 import WordCounterPage from '../pages/tools/WordCounterPage';
 import TextDiffCheckerPage from '../pages/tools/TextDiffCheckerPage';
 import JsonFormatterPage from '../pages/tools/JsonFormatterPage';
+import Base64EncoderDecoderPage from '../pages/tools/Base64EncoderDecoderPage';
 import { categories, tools } from '../data/tools';
 
 export default function AppRoutes() {
@@ -41,10 +42,11 @@ export default function AppRoutes() {
         <Route path="/text/word-counter" element={<WordCounterPage />} />
         <Route path="/text/diff-checker" element={<TextDiffCheckerPage />} />
         <Route path="/developer/json-formatter" element={<JsonFormatterPage />} />
+        <Route path="/developer/base64-encoder-decoder" element={<Base64EncoderDecoderPage />} />
 
         {/* Placeholder tool routes */}
         {tools
-          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator' && tool.route !== '/developer/json-formatter' && tool.route !== '/calculators/unit-converter' && tool.route !== '/calculators/percentage-calculator' && tool.route !== '/calculators/currency-converter' && tool.route !== '/calculators/age-calculator' && tool.route !== '/calculators/date-calculator' && tool.route !== '/text/case-converter' && tool.route !== '/text/word-counter' && tool.route !== '/text/diff-checker')
+          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator' && tool.route !== '/developer/json-formatter' && tool.route !== '/developer/base64-encoder-decoder' && tool.route !== '/calculators/unit-converter' && tool.route !== '/calculators/percentage-calculator' && tool.route !== '/calculators/currency-converter' && tool.route !== '/calculators/age-calculator' && tool.route !== '/calculators/date-calculator' && tool.route !== '/text/case-converter' && tool.route !== '/text/word-counter' && tool.route !== '/text/diff-checker')
           .map((t) => (
             <Route key={t.id} path={t.route} element={<ToolPage />} />
           ))}
