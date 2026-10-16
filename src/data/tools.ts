@@ -214,6 +214,15 @@ export const tools: Tool[] = [
     status: "available",
   },
   {
+    id: "url-encoder-decoder",
+    name: "URL Encoder & Decoder",
+    description: "Encode and decode URL text, query values and full URLs securely in the browser.",
+    category: "developer",
+    icon: "link-2",
+    route: "/developer/url-encoder-decoder",
+    status: "available",
+  },
+  {
     id: "uuid-generator",
     name: "UUID Generator",
     description: "Generate universally unique identifiers.",
