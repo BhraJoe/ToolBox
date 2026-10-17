@@ -357,11 +357,11 @@ export const tools: Tool[] = [
   {
     id: "color-converter",
     name: "Color Converter",
-    description: "Convert colors between HEX, RGB, HSL and more.",
+    description: "Convert and preview colors between HEX, RGB and HSL formats.",
     category: "design",
     icon: "palette",
     route: "/design/color-converter",
-    status: "coming-soon",
+    status: "available",
   },
   {
     id: "gradient-generator",
