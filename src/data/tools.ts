@@ -370,7 +370,7 @@ export const tools: Tool[] = [
     category: "design",
     icon: "layers",
     route: "/design/gradient-generator",
-    status: "coming-soon",
+    status: "available",
   },
   {
     id: "image-tools",

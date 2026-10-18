@@ -18,6 +18,7 @@ import JsonFormatterPage from '../pages/tools/JsonFormatterPage';
 import Base64EncoderDecoderPage from '../pages/tools/Base64EncoderDecoderPage';
 import UrlEncoderDecoderPage from '../pages/tools/UrlEncoderDecoderPage';
 import ColorConverterPage from '../pages/tools/ColorConverterPage';
+import GradientGeneratorPage from '../pages/tools/GradientGeneratorPage';
 import { categories, tools } from '../data/tools';
 
 export default function AppRoutes() {
@@ -47,10 +48,11 @@ export default function AppRoutes() {
         <Route path="/developer/base64-encoder-decoder" element={<Base64EncoderDecoderPage />} />
         <Route path="/developer/url-encoder-decoder" element={<UrlEncoderDecoderPage />} />
         <Route path="/design/color-converter" element={<ColorConverterPage />} />
+        <Route path="/design/gradient-generator" element={<GradientGeneratorPage />} />
 
         {/* Placeholder tool routes */}
         {tools
-          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator' && tool.route !== '/developer/json-formatter' && tool.route !== '/developer/base64-encoder-decoder' && tool.route !== '/developer/url-encoder-decoder' && tool.route !== '/calculators/unit-converter' && tool.route !== '/calculators/percentage-calculator' && tool.route !== '/calculators/currency-converter' && tool.route !== '/calculators/age-calculator' && tool.route !== '/calculators/date-calculator' && tool.route !== '/text/case-converter' && tool.route !== '/text/word-counter' && tool.route !== '/text/diff-checker' && tool.route !== '/design/color-converter')
+          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator' && tool.route !== '/developer/json-formatter' && tool.route !== '/developer/base64-encoder-decoder' && tool.route !== '/developer/url-encoder-decoder' && tool.route !== '/calculators/unit-converter' && tool.route !== '/calculators/percentage-calculator' && tool.route !== '/calculators/currency-converter' && tool.route !== '/calculators/age-calculator' && tool.route !== '/calculators/date-calculator' && tool.route !== '/text/case-converter' && tool.route !== '/text/word-counter' && tool.route !== '/text/diff-checker' && tool.route !== '/design/color-converter' && tool.route !== '/design/gradient-generator')
           .map((t) => (
             <Route key={t.id} path={t.route} element={<ToolPage />} />
           ))}
