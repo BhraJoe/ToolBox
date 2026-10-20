@@ -373,6 +373,15 @@ export const tools: Tool[] = [
     status: "available",
   },
   {
+    id: "box-shadow-generator",
+    name: "Box Shadow Generator",
+    description: "Create, preview and export layered CSS box shadows.",
+    category: "design",
+    icon: "layers",
+    route: "/design/box-shadow-generator",
+    status: "available",
+  },
+  {
     id: "image-tools",
     name: "Image Tools",
     description: "Resize, compress and convert images.",
