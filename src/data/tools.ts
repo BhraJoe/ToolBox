@@ -382,6 +382,15 @@ export const tools: Tool[] = [
     status: "available",
   },
   {
+    id: "flexbox-generator",
+    name: "CSS Flexbox Generator",
+    description: "Design flexible layouts, tweak item behavior, and export CSS.",
+    category: "design",
+    icon: "layout-dashboard",
+    route: "/design/flexbox-generator",
+    status: "available",
+  },
+  {
     id: "image-tools",
     name: "Image Tools",
     description: "Resize, compress and convert images.",
