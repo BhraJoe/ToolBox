@@ -373,6 +373,15 @@ export const tools: Tool[] = [
     status: "available",
   },
   {
+    id: "grid-generator",
+    name: "CSS Grid Generator",
+    description: "Design grid layouts, configure tracks and gaps, and export CSS.",
+    category: "design",
+    icon: "layout-dashboard",
+    route: "/design/grid-generator",
+    status: "available",
+  },
+  {
     id: "box-shadow-generator",
     name: "Box Shadow Generator",
     description: "Create, preview and export layered CSS box shadows.",
