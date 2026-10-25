@@ -422,11 +422,6 @@ export function randomBorderConfig(): BorderGeneratorConfig {
     };
   }
 
-  const width = `${randomInt(40) + 1}px`;
-  const style = randomStyle;
-  const color = randomColor();
-  const sides = ['top', 'right', 'bottom', 'left'] as const;
-
   return {
     widths: {
       top: `${randomInt(40) + 1}px`,
@@ -435,13 +430,13 @@ export function randomBorderConfig(): BorderGeneratorConfig {
       left: `${randomInt(40) + 1}px`,
     },
     styles: {
-      top: style,
+      top: randomStyle,
       right: BORDER_STYLES[Math.floor(Math.random() * (BORDER_STYLES.length - 1)) + 1],
       bottom: BORDER_STYLES[Math.floor(Math.random() * (BORDER_STYLES.length - 1)) + 1],
       left: BORDER_STYLES[Math.floor(Math.random() * (BORDER_STYLES.length - 1)) + 1],
     },
     colors: {
-      top: color,
+      top: randomColor(),
       right: randomColor(),
       bottom: randomColor(),
       left: randomColor(),

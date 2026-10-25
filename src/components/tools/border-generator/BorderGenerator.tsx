@@ -691,7 +691,7 @@ export default function BorderGenerator() {
               <button
                 type="button"
                 className={`border-tool__side-btn${!uniformWidth && !uniformStyle && !uniformColor ? ' border-tool__side-btn--active' : ''}`}
-                onClick={() => toggleSide('top')}
+                onClick={toggleSide}
                 aria-pressed={!uniformWidth && !uniformStyle && !uniformColor}
                 title="Top only"
               >
@@ -703,7 +703,7 @@ export default function BorderGenerator() {
               <button
                 type="button"
                 className={`border-tool__side-btn${!uniformWidth && !uniformStyle && !uniformColor ? ' border-tool__side-btn--active' : ''}`}
-                onClick={() => toggleSide('right')}
+                onClick={toggleSide}
                 aria-pressed={!uniformWidth && !uniformStyle && !uniformColor}
                 title="Right only"
               >
@@ -715,7 +715,7 @@ export default function BorderGenerator() {
               <button
                 type="button"
                 className={`border-tool__side-btn${!uniformWidth && !uniformStyle && !uniformColor ? ' border-tool__side-btn--active' : ''}`}
-                onClick={() => toggleSide('bottom')}
+                onClick={toggleSide}
                 aria-pressed={!uniformWidth && !uniformStyle && !uniformColor}
                 title="Bottom only"
               >
@@ -727,7 +727,7 @@ export default function BorderGenerator() {
               <button
                 type="button"
                 className={`border-tool__side-btn${!uniformWidth && !uniformStyle && !uniformColor ? ' border-tool__side-btn--active' : ''}`}
-                onClick={() => toggleSide('left')}
+                onClick={toggleSide}
                 aria-pressed={!uniformWidth && !uniformStyle && !uniformColor}
                 title="Left only"
               >
