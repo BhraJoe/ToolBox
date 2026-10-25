@@ -22,6 +22,7 @@ import GradientGeneratorPage from '../pages/tools/GradientGeneratorPage';
 import BoxShadowGeneratorPage from '../pages/tools/BoxShadowGeneratorPage';
 import FlexboxGeneratorPage from '../pages/tools/FlexboxGeneratorPage';
 import GridGeneratorPage from '../pages/tools/GridGeneratorPage';
+import BorderGeneratorPage from '../pages/tools/BorderGeneratorPage';
 import { categories, tools } from '../data/tools';
 
 export default function AppRoutes() {
@@ -55,10 +56,11 @@ export default function AppRoutes() {
         <Route path="/design/box-shadow-generator" element={<BoxShadowGeneratorPage />} />
         <Route path="/design/flexbox-generator" element={<FlexboxGeneratorPage />} />
         <Route path="/design/grid-generator" element={<GridGeneratorPage />} />
+        <Route path="/design/border-generator" element={<BorderGeneratorPage />} />
 
         {/* Placeholder tool routes */}
         {tools
-          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator' && tool.route !== '/developer/json-formatter' && tool.route !== '/developer/base64-encoder-decoder' && tool.route !== '/developer/url-encoder-decoder' && tool.route !== '/calculators/unit-converter' && tool.route !== '/calculators/percentage-calculator' && tool.route !== '/calculators/currency-converter' && tool.route !== '/calculators/age-calculator' && tool.route !== '/calculators/date-calculator' && tool.route !== '/text/case-converter' && tool.route !== '/text/word-counter' && tool.route !== '/text/diff-checker' && tool.route !== '/design/color-converter' && tool.route !== '/design/gradient-generator' && tool.route !== '/design/box-shadow-generator' && tool.route !== '/design/flexbox-generator' && tool.route !== '/design/grid-generator')
+          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator' && tool.route !== '/developer/json-formatter' && tool.route !== '/developer/base64-encoder-decoder' && tool.route !== '/developer/url-encoder-decoder' && tool.route !== '/calculators/unit-converter' && tool.route !== '/calculators/percentage-calculator' && tool.route !== '/calculators/currency-converter' && tool.route !== '/calculators/age-calculator' && tool.route !== '/calculators/date-calculator' && tool.route !== '/text/case-converter' && tool.route !== '/text/word-counter' && tool.route !== '/text/diff-checker' && tool.route !== '/design/color-converter' && tool.route !== '/design/gradient-generator' && tool.route !== '/design/box-shadow-generator' && tool.route !== '/design/flexbox-generator' && tool.route !== '/design/grid-generator' && tool.route !== '/design/border-generator')
           .map((t) => (
             <Route key={t.id} path={t.route} element={<ToolPage />} />
           ))}

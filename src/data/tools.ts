@@ -409,6 +409,15 @@ export const tools: Tool[] = [
     status: "coming-soon",
   },
   {
+    id: "border-generator",
+    name: "CSS Border Generator",
+    description: "Customize border width, style, color, radius, and export CSS.",
+    category: "design",
+    icon: "palette",
+    route: "/design/border-generator",
+    status: "available",
+  },
+  {
     id: "svg-tools",
     name: "SVG Tools",
     description: "Optimize and convert SVG files.",
