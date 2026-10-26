@@ -1,5 +1,10 @@
 import type { LucideProps } from 'lucide-react';
 import {
+  Crop,
+  Maximize2,
+  RotateCw,
+  Maximize,
+  MoveDiagonal,
   Calculator,
   Code,
   FileText,
@@ -113,6 +118,7 @@ const iconMap: Record<string, ComponentType<LucideProps>> = {
   layers: Layers,
   image: Image,
   'pen-tool': PenTool,
+  crop: Crop,
   receipt: Receipt,
   'receipt-text': ReceiptText,
   'file-spreadsheet': FileSpreadsheet,
@@ -128,6 +134,10 @@ const iconMap: Record<string, ComponentType<LucideProps>> = {
   pen: Pen,
   cpu: Cpu,
   'file-diff': FileDiff,
+  maximize2: Maximize2,
+  'rotate-cw': RotateCw,
+  maximize: Maximize,
+  'move-diagonal': MoveDiagonal,
 };
 
 interface IconProps extends LucideProps {

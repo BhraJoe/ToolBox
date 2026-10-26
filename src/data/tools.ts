@@ -418,6 +418,15 @@ export const tools: Tool[] = [
     status: "available",
   },
   {
+    id: "css-transform-generator",
+    name: "CSS Transform Generator",
+    description: "Apply and preview CSS transforms, generate clean transform CSS.",
+    category: "design",
+    icon: "maximize2",
+    route: "/design/transform-generator",
+    status: "available",
+  },
+  {
     id: "svg-tools",
     name: "SVG Tools",
     description: "Optimize and convert SVG files.",

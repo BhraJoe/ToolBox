@@ -23,6 +23,7 @@ import BoxShadowGeneratorPage from '../pages/tools/BoxShadowGeneratorPage';
 import FlexboxGeneratorPage from '../pages/tools/FlexboxGeneratorPage';
 import GridGeneratorPage from '../pages/tools/GridGeneratorPage';
 import BorderGeneratorPage from '../pages/tools/BorderGeneratorPage';
+import TransformGeneratorPage from '../pages/tools/TransformGeneratorPage';
 import { categories, tools } from '../data/tools';
 
 export default function AppRoutes() {
@@ -57,6 +58,7 @@ export default function AppRoutes() {
         <Route path="/design/flexbox-generator" element={<FlexboxGeneratorPage />} />
         <Route path="/design/grid-generator" element={<GridGeneratorPage />} />
         <Route path="/design/border-generator" element={<BorderGeneratorPage />} />
+        <Route path="/design/transform-generator" element={<TransformGeneratorPage />} />
 
         {/* Placeholder tool routes */}
         {tools
