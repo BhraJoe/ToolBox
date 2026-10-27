@@ -214,6 +214,15 @@ export const tools: Tool[] = [
     status: "available",
   },
   {
+    id: "api-request-tester",
+    name: "API Request Tester",
+    description: "Send HTTP requests and inspect API responses directly from your browser.",
+    category: "developer",
+    icon: "network",
+    route: "/developer/api-request-tester",
+    status: "available",
+  },
+  {
     id: "url-encoder-decoder",
     name: "URL Encoder & Decoder",
     description: "Encode and decode URL text, query values and full URLs securely in the browser.",

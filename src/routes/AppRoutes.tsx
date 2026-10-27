@@ -15,6 +15,7 @@ import TextCaseConverterPage from '../pages/tools/TextCaseConverterPage';
 import WordCounterPage from '../pages/tools/WordCounterPage';
 import TextDiffCheckerPage from '../pages/tools/TextDiffCheckerPage';
 import JsonFormatterPage from '../pages/tools/JsonFormatterPage';
+import ApiRequestTesterPage from '../pages/tools/ApiRequestTesterPage';
 import Base64EncoderDecoderPage from '../pages/tools/Base64EncoderDecoderPage';
 import UrlEncoderDecoderPage from '../pages/tools/UrlEncoderDecoderPage';
 import ColorConverterPage from '../pages/tools/ColorConverterPage';
@@ -50,6 +51,7 @@ export default function AppRoutes() {
         <Route path="/text/word-counter" element={<WordCounterPage />} />
         <Route path="/text/diff-checker" element={<TextDiffCheckerPage />} />
         <Route path="/developer/json-formatter" element={<JsonFormatterPage />} />
+        <Route path="/developer/api-request-tester" element={<ApiRequestTesterPage />} />
         <Route path="/developer/base64-encoder-decoder" element={<Base64EncoderDecoderPage />} />
         <Route path="/developer/url-encoder-decoder" element={<UrlEncoderDecoderPage />} />
         <Route path="/design/color-converter" element={<ColorConverterPage />} />

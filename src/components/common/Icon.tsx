@@ -65,6 +65,9 @@ import {
   HelpCircle,
   Key,
   FileDiff,
+  Copy,
+  Trash2,
+  X,
 } from 'lucide-react';
 import type { ComponentType } from 'react';
 
@@ -134,6 +137,10 @@ const iconMap: Record<string, ComponentType<LucideProps>> = {
   pen: Pen,
   cpu: Cpu,
   'file-diff': FileDiff,
+  copy: Copy,
+  trash: Trash2,
+  trash2: Trash2,
+  x: X,
   maximize2: Maximize2,
   'rotate-cw': RotateCw,
   maximize: Maximize,
