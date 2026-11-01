@@ -202,7 +202,7 @@ export const tools: Tool[] = [
     category: "developer",
     icon: "key-round",
     route: "/developer/jwt-decoder",
-    status: "coming-soon",
+    status: "available",
   },
   {
     id: "base64-encoder",
