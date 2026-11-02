@@ -189,11 +189,11 @@ export const tools: Tool[] = [
   {
     id: "regex-tester",
     name: "Regex Tester",
-    description: "Test and debug regular expressions.",
+    description: "Test and debug regular expressions with live matching and capture groups.",
     category: "developer",
     icon: "search",
     route: "/developer/regex-tester",
-    status: "coming-soon",
+    status: "available",
   },
   {
     id: "jwt-decoder",
