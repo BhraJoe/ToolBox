@@ -234,11 +234,11 @@ export const tools: Tool[] = [
   {
     id: "uuid-generator",
     name: "UUID Generator",
-    description: "Generate universally unique identifiers.",
+    description: "Generate UUID v4 and v7 identifiers securely in your browser.",
     category: "developer",
     icon: "fingerprint",
     route: "/developer/uuid-generator",
-    status: "coming-soon",
+    status: "available",
   },
   {
     id: "timestamp-converter",
