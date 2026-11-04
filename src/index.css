@@ -9056,3 +9056,425 @@ input {
 }
 
 /* End JWT Decoder */
+
+/* ─── Markdown Editor & Preview ─────────────────────────────────────── */
+
+.markdown-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.markdown-editor__toolbar,
+.markdown-editor__main-controls,
+.markdown-editor__templates,
+.markdown-editor__stats,
+.markdown-editor__toolbar-right,
+.markdown-editor__template-list,
+.markdown-editor__view-toggle,
+.markdown-editor__panel-header,
+.markdown-editor__snippet-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.markdown-editor__toolbar {
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.markdown-editor__toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.markdown-editor__toolbar-button,
+.markdown-editor__action-button,
+.markdown-editor__template-button,
+.markdown-editor__view-toggle button,
+.markdown-editor__snippet-header button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-radius: var(--radius);
+  padding: 7px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: border-color var(--transition), background var(--transition), color var(--transition), transform var(--transition);
+}
+
+.markdown-editor__toolbar-button:hover,
+.markdown-editor__action-button:hover,
+.markdown-editor__template-button:hover,
+.markdown-editor__view-toggle button:hover,
+.markdown-editor__snippet-header button:hover {
+  border-color: var(--color-primary);
+  background: var(--bg-hover);
+  transform: translateY(-1px);
+}
+
+.markdown-editor__toolbar-right {
+  justify-content: flex-end;
+}
+
+.markdown-editor__stats {
+  gap: 10px;
+}
+
+.markdown-editor__stat-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.markdown-editor__stat-pill strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.markdown-editor__templates {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  justify-content: space-between;
+}
+
+.markdown-editor__templates-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.markdown-editor__template-list {
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.markdown-editor__template-button {
+  background: var(--bg-secondary);
+}
+
+.markdown-editor__main-controls {
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.markdown-editor__view-toggle {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 4px;
+}
+
+.markdown-editor__view-toggle button {
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 600;
+}
+
+.markdown-editor__view-toggle button.is-active {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.markdown-editor__file-meta {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.markdown-editor__status {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  color: #15803d;
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.markdown-editor__workspace {
+  display: grid;
+  gap: 18px;
+  min-height: 640px;
+}
+
+.markdown-editor__workspace--split {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.markdown-editor__workspace--editor,
+.markdown-editor__workspace--preview {
+  grid-template-columns: 1fr;
+}
+
+.markdown-editor__panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  min-height: 0;
+}
+
+.markdown-editor__panel-header {
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.markdown-editor__panel-header h2 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.markdown-editor__editor-shell {
+  display: flex;
+  min-height: 580px;
+  max-height: 72vh;
+  background: var(--bg-primary);
+}
+
+.markdown-editor__line-numbers {
+  width: 46px;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  color: var(--text-tertiary);
+  font-size: 12px;
+  line-height: 1.6;
+  padding: 14px 8px 14px 0;
+  text-align: right;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  user-select: none;
+  overflow: hidden;
+}
+
+.markdown-editor__line-numbers span {
+  display: block;
+  min-height: 1.6em;
+}
+
+.markdown-editor__textarea {
+  width: 100%;
+  min-height: 580px;
+  resize: none;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  padding: 14px 16px 16px;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  outline: none;
+}
+
+.markdown-editor__textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.markdown-editor__preview-content {
+  padding: 20px 18px 22px;
+  overflow: auto;
+  min-height: 580px;
+  max-height: 72vh;
+}
+
+.markdown-editor__markdown {
+  display: block;
+  color: var(--text-primary);
+  line-height: 1.75;
+}
+
+.markdown-editor__markdown > * + * {
+  margin-top: 0.8em;
+}
+
+.markdown-editor__markdown h1,
+.markdown-editor__markdown h2,
+.markdown-editor__markdown h3,
+.markdown-editor__markdown h4,
+.markdown-editor__markdown h5,
+.markdown-editor__markdown h6 {
+  margin-top: 1.5em;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+.markdown-editor__markdown h1 { font-size: 2em; }
+.markdown-editor__markdown h2 { font-size: 1.6em; }
+.markdown-editor__markdown h3 { font-size: 1.3em; }
+.markdown-editor__markdown p,
+.markdown-editor__markdown li,
+.markdown-editor__markdown blockquote {
+  font-size: 15px;
+}
+
+.markdown-editor__markdown a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.markdown-editor__markdown img {
+  display: block;
+  max-width: 100%;
+  border-radius: var(--radius);
+  margin: 12px 0;
+}
+
+.markdown-editor__markdown ul,
+.markdown-editor__markdown ol {
+  padding-left: 1.5em;
+}
+
+.markdown-editor__markdown li + li {
+  margin-top: 0.35em;
+}
+
+.markdown-editor__markdown code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.92em;
+  background: var(--bg-secondary);
+  padding: 0.1em 0.45em;
+  border-radius: 4px;
+}
+
+.markdown-editor__markdown pre {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 14px;
+  overflow-x: auto;
+  margin: 14px 0;
+}
+
+.markdown-editor__markdown pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.markdown-editor__markdown blockquote {
+  border-left: 4px solid var(--color-primary);
+  padding-left: 16px;
+  color: var(--text-secondary);
+  margin: 14px 0;
+}
+
+.markdown-editor__markdown hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 18px 0;
+}
+
+.markdown-editor__markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.markdown-editor__markdown th,
+.markdown-editor__markdown td {
+  border: 1px solid var(--border-color);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.markdown-editor__markdown th {
+  background: var(--bg-secondary);
+}
+
+.markdown-editor__snippet {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 14px 0;
+}
+
+.markdown-editor__snippet-header {
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.markdown-editor__snippet-header button {
+  padding: 5px 8px;
+  font-size: 11px;
+  border-radius: 6px;
+}
+
+.markdown-editor__snippet pre {
+  margin: 0;
+  padding: 14px;
+  background: transparent;
+  border: none;
+}
+
+@media (max-width: 900px) {
+  .markdown-editor__workspace--split {
+    grid-template-columns: 1fr;
+  }
+
+  .markdown-editor__toolbar,
+  .markdown-editor__main-controls,
+  .markdown-editor__templates {
+    align-items: stretch;
+  }
+
+  .markdown-editor__toolbar,
+  .markdown-editor__templates,
+  .markdown-editor__main-controls {
+    flex-direction: column;
+  }
+
+  .markdown-editor__toolbar-right,
+  .markdown-editor__template-list,
+  .markdown-editor__view-toggle {
+    width: 100%;
+  }
+
+  .markdown-editor__toolbar-right {
+    justify-content: flex-start;
+  }
+
+  .markdown-editor__view-toggle {
+    justify-content: space-between;
+  }
+}

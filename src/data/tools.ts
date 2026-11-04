@@ -306,13 +306,13 @@ export const tools: Tool[] = [
     status: "coming-soon",
   },
   {
-    id: "markdown",
-    name: "Markdown",
-    description: "Preview and edit Markdown content.",
+    id: "markdown-editor",
+    name: "Markdown Editor & Preview",
+    description: "Write, edit, format, and preview Markdown documents in real time.",
     category: "text",
     icon: "file-code",
-    route: "/text/markdown",
-    status: "coming-soon",
+    route: "/text/markdown-editor",
+    status: "available",
   },
 
   // ── Web ────────────────────────────────────────────────────────────────
