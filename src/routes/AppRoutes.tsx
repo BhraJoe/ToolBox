@@ -29,6 +29,7 @@ import JwtDecoderPage from '../pages/tools/JwtDecoderPage';
 import RegexTesterPage from '../pages/tools/RegexTesterPage';
 import UuidGeneratorPage from '../pages/tools/UuidGeneratorPage';
 import MarkdownEditorPage from '../pages/tools/MarkdownEditorPage';
+import TimestampConverterPage from '../pages/tools/TimestampConverterPage';
 import { categories, tools } from '../data/tools';
 
 export default function AppRoutes() {
@@ -57,6 +58,7 @@ export default function AppRoutes() {
         <Route path="/developer/json-formatter" element={<JsonFormatterPage />} />
         <Route path="/developer/regex-tester" element={<RegexTesterPage />} />
         <Route path="/developer/uuid-generator" element={<UuidGeneratorPage />} />
+        <Route path="/developer/timestamp-converter" element={<TimestampConverterPage />} />
         <Route path="/developer/api-request-tester" element={<ApiRequestTesterPage />} />
         <Route path="/developer/base64-encoder-decoder" element={<Base64EncoderDecoderPage />} />
         <Route path="/developer/url-encoder-decoder" element={<UrlEncoderDecoderPage />} />
@@ -72,7 +74,7 @@ export default function AppRoutes() {
 
         {/* Placeholder tool routes */}
         {tools
-          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator' && tool.route !== '/developer/json-formatter' && tool.route !== '/developer/regex-tester' && tool.route !== '/developer/uuid-generator' && tool.route !== '/developer/base64-encoder-decoder' && tool.route !== '/developer/url-encoder-decoder' && tool.route !== '/developer/jwt-decoder' && tool.route !== '/calculators/unit-converter' && tool.route !== '/calculators/percentage-calculator' && tool.route !== '/calculators/currency-converter' && tool.route !== '/calculators/age-calculator' && tool.route !== '/calculators/date-calculator' && tool.route !== '/text/case-converter' && tool.route !== '/text/word-counter' && tool.route !== '/text/diff-checker' && tool.route !== '/text/markdown-editor' && tool.route !== '/design/color-converter' && tool.route !== '/design/gradient-generator' && tool.route !== '/design/box-shadow-generator' && tool.route !== '/design/flexbox-generator' && tool.route !== '/design/grid-generator' && tool.route !== '/design/border-generator')
+          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator' && tool.route !== '/developer/json-formatter' && tool.route !== '/developer/regex-tester' && tool.route !== '/developer/uuid-generator' && tool.route !== '/developer/timestamp-converter' && tool.route !== '/developer/base64-encoder-decoder' && tool.route !== '/developer/url-encoder-decoder' && tool.route !== '/developer/jwt-decoder' && tool.route !== '/calculators/unit-converter' && tool.route !== '/calculators/percentage-calculator' && tool.route !== '/calculators/currency-converter' && tool.route !== '/calculators/age-calculator' && tool.route !== '/calculators/date-calculator' && tool.route !== '/text/case-converter' && tool.route !== '/text/word-counter' && tool.route !== '/text/diff-checker' && tool.route !== '/text/markdown-editor' && tool.route !== '/design/color-converter' && tool.route !== '/design/gradient-generator' && tool.route !== '/design/box-shadow-generator' && tool.route !== '/design/flexbox-generator' && tool.route !== '/design/grid-generator' && tool.route !== '/design/border-generator')
           .map((t) => (
             <Route key={t.id} path={t.route} element={<ToolPage />} />
           ))}

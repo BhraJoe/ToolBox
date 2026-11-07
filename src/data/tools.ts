@@ -243,11 +243,11 @@ export const tools: Tool[] = [
   {
     id: "timestamp-converter",
     name: "Timestamp Converter",
-    description: "Convert between timestamp formats and timezones.",
+    description: "Convert Unix timestamps and dates with seconds, milliseconds, and timezone support.",
     category: "developer",
     icon: "clock",
     route: "/developer/timestamp-converter",
-    status: "coming-soon",
+    status: "available",
   },
 
   // ── Text ───────────────────────────────────────────────────────────────
