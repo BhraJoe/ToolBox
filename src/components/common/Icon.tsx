@@ -68,6 +68,7 @@ import {
   Copy,
   Trash2,
   X,
+  QrCode,
 } from 'lucide-react';
 import type { ComponentType } from 'react';
 
@@ -137,6 +138,7 @@ const iconMap: Record<string, ComponentType<LucideProps>> = {
   pen: Pen,
   cpu: Cpu,
   'file-diff': FileDiff,
+  'qr-code': QrCode,
   copy: Copy,
   trash: Trash2,
   trash2: Trash2,

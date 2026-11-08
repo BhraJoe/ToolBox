@@ -79,6 +79,13 @@ export const categories: Category[] = [
     description: "AI-powered content, code and productivity tools.",
     route: "/ai",
   },
+  {
+    id: "generators",
+    name: "Generators",
+    icon: "sparkles",
+    description: "Create useful codes, content and other digital assets.",
+    route: "/generators",
+  },
 ];
 
 // ─── Tools ─────────────────────────────────────────────────────────────────
@@ -584,6 +591,15 @@ export const tools: Tool[] = [
     icon: "cpu",
     route: "/ai/ai-code-explainer",
     status: "coming-soon",
+  },
+  {
+    id: "qr-code-generator",
+    name: "QR Code Generator",
+    description: "Generate customizable, downloadable QR codes for URLs, text, contacts, Wi-Fi networks and more.",
+    category: "generators",
+    icon: "qr-code",
+    route: "/generators/qr-code-generator",
+    status: "available",
   },
 ];
 
