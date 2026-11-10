@@ -601,6 +601,15 @@ export const tools: Tool[] = [
     route: "/generators/qr-code-generator",
     status: "available",
   },
+  {
+    id: "barcode-generator",
+    name: "Barcode Generator",
+    description: "Generate customizable, downloadable barcodes for product labels, inventory, retail and business applications.",
+    category: "generators",
+    icon: "tag",
+    route: "/generators/barcode-generator",
+    status: "available",
+  },
 ];
 
 // ─── Helper Functions ──────────────────────────────────────────────────────

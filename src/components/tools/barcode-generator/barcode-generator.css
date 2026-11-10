@@ -1,0 +1,378 @@
+.barcode-tool {
+  width: 100%;
+}
+
+.barcode-tool__workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.9fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.barcode-tool__controls {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+.barcode-tool__card {
+  min-width: 0;
+  padding: 22px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.barcode-tool__section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.barcode-tool__section-heading h2 {
+  color: var(--text-primary);
+  font-size: 17px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.barcode-tool__eyebrow {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.barcode-tool__fields,
+.barcode-tool__settings-grid,
+.barcode-tool__color-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.barcode-tool__fields {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.barcode-tool__settings-grid--lower {
+  align-items: center;
+  margin-top: 16px;
+}
+
+.barcode-tool__field,
+.barcode-tool__color-field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.barcode-tool__field > label,
+.barcode-tool__color-field > label {
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.barcode-tool__field input,
+.barcode-tool__field select,
+.barcode-tool__color-inputs input[type='text'] {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  padding: 9px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  outline: none;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 14px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.barcode-tool__field input::placeholder,
+.barcode-tool__color-inputs input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.barcode-tool__field input:focus,
+.barcode-tool__field select:focus,
+.barcode-tool__color-inputs input[type='text']:focus,
+.barcode-tool__action:focus-visible,
+.barcode-tool__check input:focus-visible {
+  border-color: var(--color-primary);
+  outline: 3px solid color-mix(in srgb, var(--color-primary) 24%, transparent);
+  outline-offset: 1px;
+}
+
+.barcode-tool__field-hint {
+  color: var(--text-tertiary);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.barcode-tool__field-error {
+  color: #dc2626;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.barcode-tool__check {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 14px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.barcode-tool__check--setting {
+  align-self: center;
+  margin-top: 18px;
+}
+
+.barcode-tool__check input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary);
+}
+
+.barcode-tool__color-grid {
+  margin-top: 16px;
+}
+
+.barcode-tool__color-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.barcode-tool__color-inputs input[type='color'] {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  padding: 3px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-primary);
+  cursor: pointer;
+}
+
+.barcode-tool__color-inputs input[type='text'] {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.barcode-tool__warning {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border: 1px solid #f59e0b66;
+  border-radius: var(--radius);
+  background: #f59e0b14;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.barcode-tool__left-actions {
+  display: flex;
+}
+
+.barcode-tool__preview-card {
+  position: sticky;
+  top: 20px;
+}
+
+.barcode-tool__ready {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #16a34a18;
+  color: #15803d;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.barcode-tool__preview {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  width: 100%;
+  padding: 18px;
+  overflow: auto;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.barcode-tool__preview > img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.barcode-tool__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 270px;
+  text-align: center;
+  color: var(--text-tertiary);
+}
+
+.barcode-tool__empty > svg {
+  color: var(--color-primary);
+  opacity: 0.75;
+}
+
+.barcode-tool__empty strong {
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+.barcode-tool__empty span {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.barcode-tool__empty--error > svg,
+.barcode-tool__empty--error strong {
+  color: #dc2626;
+}
+
+.barcode-tool__summary {
+  display: grid;
+  gap: 6px;
+  margin: 14px 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.barcode-tool__summary code {
+  overflow-wrap: anywhere;
+  color: var(--text-primary);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.barcode-tool__format-label,
+.barcode-tool__check-result {
+  font-weight: 600;
+}
+
+.barcode-tool__check-result {
+  color: #15803d;
+}
+
+.barcode-tool__retail-note {
+  margin: 14px 0;
+  color: var(--text-tertiary);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.barcode-tool__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.barcode-tool__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 600;
+  transition: background var(--transition), border-color var(--transition), opacity var(--transition);
+}
+
+.barcode-tool__action:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  background: var(--bg-hover);
+}
+
+.barcode-tool__action--primary {
+  grid-column: 1 / -1;
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--text-on-primary);
+}
+
+.barcode-tool__action--primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+.barcode-tool__action--clear {
+  justify-self: start;
+  color: var(--text-secondary);
+  background: transparent;
+}
+
+.barcode-tool__action:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.barcode-tool__feedback {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.barcode-tool__feedback--success {
+  color: #15803d;
+}
+
+.barcode-tool__feedback--error {
+  color: #dc2626;
+}
+
+@media (max-width: 900px) {
+  .barcode-tool__workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .barcode-tool__preview-card {
+    position: static;
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 520px) {
+  .barcode-tool__card {
+    padding: 16px;
+  }
+
+  .barcode-tool__settings-grid,
+  .barcode-tool__color-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .barcode-tool__actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .barcode-tool__action--primary {
+    grid-column: auto;
+  }
+}
