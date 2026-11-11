@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
 import Dashboard from '../pages/Dashboard';
@@ -34,6 +35,8 @@ import QrCodeGeneratorPage from '../pages/tools/QrCodeGeneratorPage';
 import BarcodeGeneratorPage from '../pages/tools/BarcodeGeneratorPage';
 import { categories, tools } from '../data/tools';
 
+const QrCodeScannerPage = lazy(() => import('../pages/tools/QrCodeScannerPage'));
+
 export default function AppRoutes() {
   return (
     <Routes>
@@ -63,6 +66,14 @@ export default function AppRoutes() {
         <Route path="/developer/timestamp-converter" element={<TimestampConverterPage />} />
         <Route path="/generators/qr-code-generator" element={<QrCodeGeneratorPage />} />
         <Route path="/generators/barcode-generator" element={<BarcodeGeneratorPage />} />
+        <Route
+          path="/generators/qr-code-scanner"
+          element={(
+            <Suspense fallback={<div className="tool-view">Loading QR Code Scanner…</div>}>
+              <QrCodeScannerPage />
+            </Suspense>
+          )}
+        />
         <Route path="/developer/api-request-tester" element={<ApiRequestTesterPage />} />
         <Route path="/developer/base64-encoder-decoder" element={<Base64EncoderDecoderPage />} />
         <Route path="/developer/url-encoder-decoder" element={<UrlEncoderDecoderPage />} />
@@ -78,7 +89,7 @@ export default function AppRoutes() {
 
         {/* Placeholder tool routes */}
         {tools
-          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator' && tool.route !== '/developer/json-formatter' && tool.route !== '/developer/regex-tester' && tool.route !== '/developer/uuid-generator' && tool.route !== '/developer/timestamp-converter' && tool.route !== '/developer/base64-encoder-decoder' && tool.route !== '/developer/url-encoder-decoder' && tool.route !== '/developer/jwt-decoder' && tool.route !== '/calculators/unit-converter' && tool.route !== '/calculators/percentage-calculator' && tool.route !== '/calculators/currency-converter' && tool.route !== '/calculators/age-calculator' && tool.route !== '/calculators/date-calculator' && tool.route !== '/text/case-converter' && tool.route !== '/text/word-counter' && tool.route !== '/text/diff-checker' && tool.route !== '/text/markdown-editor' && tool.route !== '/design/color-converter' && tool.route !== '/design/gradient-generator' && tool.route !== '/design/box-shadow-generator' && tool.route !== '/design/flexbox-generator' && tool.route !== '/design/grid-generator' && tool.route !== '/design/border-generator' && tool.route !== '/generators/qr-code-generator' && tool.route !== '/generators/barcode-generator')
+          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator' && tool.route !== '/developer/json-formatter' && tool.route !== '/developer/regex-tester' && tool.route !== '/developer/uuid-generator' && tool.route !== '/developer/timestamp-converter' && tool.route !== '/developer/base64-encoder-decoder' && tool.route !== '/developer/url-encoder-decoder' && tool.route !== '/developer/jwt-decoder' && tool.route !== '/calculators/unit-converter' && tool.route !== '/calculators/percentage-calculator' && tool.route !== '/calculators/currency-converter' && tool.route !== '/calculators/age-calculator' && tool.route !== '/calculators/date-calculator' && tool.route !== '/text/case-converter' && tool.route !== '/text/word-counter' && tool.route !== '/text/diff-checker' && tool.route !== '/text/markdown-editor' && tool.route !== '/design/color-converter' && tool.route !== '/design/gradient-generator' && tool.route !== '/design/box-shadow-generator' && tool.route !== '/design/flexbox-generator' && tool.route !== '/design/grid-generator' && tool.route !== '/design/border-generator' && tool.route !== '/generators/qr-code-generator' && tool.route !== '/generators/barcode-generator' && tool.route !== '/generators/qr-code-scanner')
           .map((t) => (
             <Route key={t.id} path={t.route} element={<ToolPage />} />
           ))}
