@@ -313,9 +313,8 @@ export default function QrCodeScanner() {
                 type="button"
                 className="qr-scanner__button qr-scanner__button--primary"
                 onClick={() => void handleStartCamera()}
-                disabled={cameraStatus === 'starting'}
               >
-                <Camera size={16} /> {cameraStatus === 'starting' ? 'Starting…' : 'Start Camera'}
+                <Camera size={16} /> Start Camera
               </button>
             )}
           </div>
