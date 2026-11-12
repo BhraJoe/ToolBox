@@ -619,6 +619,15 @@ export const tools: Tool[] = [
     route: "/generators/qr-code-scanner",
     status: "available",
   },
+  {
+    id: "barcode-scanner",
+    name: "Barcode Scanner",
+    description: "Scan and decode supported barcodes using a device camera or uploaded images.",
+    category: "generators",
+    icon: "tag",
+    route: "/generators/barcode-scanner",
+    status: "available",
+  },
 ];
 
 // ─── Helper Functions ──────────────────────────────────────────────────────
