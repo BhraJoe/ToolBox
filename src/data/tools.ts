@@ -425,6 +425,15 @@ export const tools: Tool[] = [
     status: "coming-soon",
   },
   {
+    id: "image-compressor",
+    name: "Image Compressor",
+    description: "Compress, resize and convert images locally in your browser.",
+    category: "design",
+    icon: "image",
+    route: "/image-tools/image-compressor",
+    status: "available",
+  },
+  {
     id: "border-generator",
     name: "CSS Border Generator",
     description: "Customize border width, style, color, radius, and export CSS.",
