@@ -434,6 +434,15 @@ export const tools: Tool[] = [
     status: "available",
   },
   {
+    id: "image-resizer",
+    name: "Image Resizer",
+    description: "Resize images to custom dimensions, percentages, and preset sizes.",
+    category: "design",
+    icon: "image",
+    route: "/image-tools/image-resizer",
+    status: "available",
+  },
+  {
     id: "border-generator",
     name: "CSS Border Generator",
     description: "Customize border width, style, color, radius, and export CSS.",
@@ -687,3 +696,5 @@ export function getComingSoonCount(): number {
 export function getAvailableCount(): number {
   return tools.filter((tool) => tool.status === "available").length;
 }
+
+
