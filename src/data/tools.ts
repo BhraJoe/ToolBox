@@ -443,6 +443,15 @@ export const tools: Tool[] = [
     status: "available",
   },
   {
+    id: "image-cropper",
+    name: "Image Cropper",
+    description: "Crop images to custom dimensions and preset aspect ratios for social media, websites, profile pictures, and other uses.",
+    category: "design",
+    icon: "crop",
+    route: "/image-tools/image-cropper",
+    status: "available",
+  },
+  {
     id: "border-generator",
     name: "CSS Border Generator",
     description: "Customize border width, style, color, radius, and export CSS.",

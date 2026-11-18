@@ -35,6 +35,7 @@ import QrCodeGeneratorPage from '../pages/tools/QrCodeGeneratorPage';
 import BarcodeGeneratorPage from '../pages/tools/BarcodeGeneratorPage';
 import ImageCompressorPage from '../pages/tools/ImageCompressorPage';
 import ImageResizerPage from '../pages/tools/ImageResizerPage';
+import ImageCropperPage from '../pages/tools/ImageCropperPage';
 import { categories, tools } from '../data/tools';
 
 const QrCodeScannerPage = lazy(() => import('../pages/tools/QrCodeScannerPage'));
@@ -99,6 +100,7 @@ export default function AppRoutes() {
         <Route path="/design/transform-generator" element={<TransformGeneratorPage />} />
         <Route path="/image-tools/image-compressor" element={<ImageCompressorPage />} />
         <Route path="/image-tools/image-resizer" element={<ImageResizerPage />} />
+        <Route path="/image-tools/image-cropper" element={<ImageCropperPage />} />
 
         {/* Placeholder tool routes */}
         {tools
