@@ -452,6 +452,15 @@ export const tools: Tool[] = [
     status: "available",
   },
   {
+    id: "image-to-base64",
+    name: "Image to Base64 Converter",
+    description: "Convert images into Base64 strings and Data URLs for HTML, CSS, JavaScript, JSON and Markdown.",
+    category: "design",
+    icon: "binary",
+    route: "/image-tools/image-to-base64",
+    status: "available",
+  },
+  {
     id: "border-generator",
     name: "CSS Border Generator",
     description: "Customize border width, style, color, radius, and export CSS.",

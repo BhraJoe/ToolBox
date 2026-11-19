@@ -36,6 +36,7 @@ import BarcodeGeneratorPage from '../pages/tools/BarcodeGeneratorPage';
 import ImageCompressorPage from '../pages/tools/ImageCompressorPage';
 import ImageResizerPage from '../pages/tools/ImageResizerPage';
 import ImageCropperPage from '../pages/tools/ImageCropperPage';
+import ImageToBase64Page from '../pages/tools/ImageToBase64Page';
 import { categories, tools } from '../data/tools';
 
 const QrCodeScannerPage = lazy(() => import('../pages/tools/QrCodeScannerPage'));
@@ -101,10 +102,11 @@ export default function AppRoutes() {
         <Route path="/image-tools/image-compressor" element={<ImageCompressorPage />} />
         <Route path="/image-tools/image-resizer" element={<ImageResizerPage />} />
         <Route path="/image-tools/image-cropper" element={<ImageCropperPage />} />
+        <Route path="/image-tools/image-to-base64" element={<ImageToBase64Page />} />
 
         {/* Placeholder tool routes */}
         {tools
-          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator' && tool.route !== '/developer/json-formatter' && tool.route !== '/developer/regex-tester' && tool.route !== '/developer/uuid-generator' && tool.route !== '/developer/timestamp-converter' && tool.route !== '/developer/base64-encoder-decoder' && tool.route !== '/developer/url-encoder-decoder' && tool.route !== '/developer/jwt-decoder' && tool.route !== '/calculators/unit-converter' && tool.route !== '/calculators/percentage-calculator' && tool.route !== '/calculators/currency-converter' && tool.route !== '/calculators/age-calculator' && tool.route !== '/calculators/date-calculator' && tool.route !== '/text/case-converter' && tool.route !== '/text/word-counter' && tool.route !== '/text/diff-checker' && tool.route !== '/text/markdown-editor' && tool.route !== '/design/color-converter' && tool.route !== '/design/gradient-generator' && tool.route !== '/design/box-shadow-generator' && tool.route !== '/design/flexbox-generator' && tool.route !== '/design/grid-generator' && tool.route !== '/design/border-generator' && tool.route !== '/generators/qr-code-generator' && tool.route !== '/generators/barcode-generator' && tool.route !== '/generators/qr-code-scanner' && tool.route !== '/generators/barcode-scanner')
+          .filter((tool) => tool.route !== '/calculators/calculator' && tool.route !== '/developer/password-generator' && tool.route !== '/developer/json-formatter' && tool.route !== '/developer/regex-tester' && tool.route !== '/developer/uuid-generator' && tool.route !== '/developer/timestamp-converter' && tool.route !== '/developer/base64-encoder-decoder' && tool.route !== '/developer/url-encoder-decoder' && tool.route !== '/developer/jwt-decoder' && tool.route !== '/calculators/unit-converter' && tool.route !== '/calculators/percentage-calculator' && tool.route !== '/calculators/currency-converter' && tool.route !== '/calculators/age-calculator' && tool.route !== '/calculators/date-calculator' && tool.route !== '/text/case-converter' && tool.route !== '/text/word-counter' && tool.route !== '/text/diff-checker' && tool.route !== '/text/markdown-editor' && tool.route !== '/design/color-converter' && tool.route !== '/design/gradient-generator' && tool.route !== '/design/box-shadow-generator' && tool.route !== '/design/flexbox-generator' && tool.route !== '/design/grid-generator' && tool.route !== '/design/border-generator' && tool.route !== '/generators/qr-code-generator' && tool.route !== '/generators/barcode-generator' && tool.route !== '/generators/qr-code-scanner' && tool.route !== '/generators/barcode-scanner' && tool.route !== '/image-tools/image-to-base64')
           .map((t) => (
             <Route key={t.id} path={t.route} element={<ToolPage />} />
           ))}
