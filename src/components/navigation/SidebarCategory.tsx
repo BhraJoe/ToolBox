@@ -12,7 +12,8 @@ interface SidebarCategoryProps {
 }
 
 export default function SidebarCategory({ category, tools, currentPath, onItemClick }: SidebarCategoryProps) {
-  const isActiveCategory = currentPath.startsWith(category.route);
+  const isActiveCategory =
+    currentPath.startsWith(category.route) || tools.some((tool) => tool.route === currentPath);
   const [isOpen, setIsOpen] = useState(isActiveCategory);
 
   return (
