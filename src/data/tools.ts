@@ -422,7 +422,16 @@ export const tools: Tool[] = [
     category: "design",
     icon: "image",
     route: "/design/image-tools",
-    status: "coming-soon",
+    status: "available",
+  },
+  {
+    id: "image-format-converter",
+    name: "Image Format Converter",
+    description: "Convert images between PNG, JPEG and WEBP formats locally in your browser.",
+    category: "design",
+    icon: "image",
+    route: "/image-tools/image-format-converter",
+    status: "available",
   },
   {
     id: "image-compressor",
@@ -467,6 +476,15 @@ export const tools: Tool[] = [
     category: "design",
     icon: "image",
     route: "/image-tools/base64-to-image",
+    status: "available",
+  },
+  {
+    id: "image-to-pdf",
+    name: "Image to PDF Converter",
+    description: "Combine and convert images into a single multi-page PDF document entirely in your browser.",
+    category: "design",
+    icon: "file-text",
+    route: "/image-tools/image-to-pdf",
     status: "available",
   },
   {
