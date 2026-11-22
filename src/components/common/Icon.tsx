@@ -69,6 +69,11 @@ import {
   Trash2,
   X,
   QrCode,
+  FileImage,
+  FileDown,
+  Upload,
+  Save,
+  LogOut,
 } from 'lucide-react';
 import type { ComponentType } from 'react';
 
@@ -147,6 +152,13 @@ const iconMap: Record<string, ComponentType<LucideProps>> = {
   'rotate-cw': RotateCw,
   maximize: Maximize,
   'move-diagonal': MoveDiagonal,
+  'file-image': FileImage,
+  'file-down': FileDown,
+  'pdf-down': FileDown,
+  'pdf-image': FileImage,
+  'upload': Upload,
+  save: Save,
+  logout: LogOut,
 };
 
 interface IconProps extends LucideProps {

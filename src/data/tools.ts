@@ -488,6 +488,15 @@ export const tools: Tool[] = [
     status: "available",
   },
   {
+    id: "pdf-to-image",
+    name: "PDF to Image Converter",
+    description: "Convert PDF pages into PNG or JPEG images, select pages, choose resolution, and download individually or as a ZIP.",
+    category: "design",
+    icon: "file-image",
+    route: "/image-tools/pdf-to-image",
+    status: "available",
+  },
+  {
     id: "border-generator",
     name: "CSS Border Generator",
     description: "Customize border width, style, color, radius, and export CSS.",
