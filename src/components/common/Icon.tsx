@@ -74,6 +74,7 @@ import {
   Upload,
   Save,
   LogOut,
+  Stamp,
 } from 'lucide-react';
 import type { ComponentType } from 'react';
 
@@ -159,6 +160,7 @@ const iconMap: Record<string, ComponentType<LucideProps>> = {
   'upload': Upload,
   save: Save,
   logout: LogOut,
+  stamp: Stamp,
 };
 
 interface IconProps extends LucideProps {

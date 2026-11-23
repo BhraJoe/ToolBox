@@ -41,6 +41,7 @@ import ImageToBase64Page from '../pages/tools/ImageToBase64Page';
 import Base64ToImagePage from '../pages/tools/Base64ToImagePage';
 import ImageToPdfPage from '../pages/tools/ImageToPdfPage';
 import PdfToImagePage from '../pages/tools/PdfToImagePage';
+import ImageWatermarkPage from '../pages/tools/ImageWatermarkPage';
 import { categories, tools } from '../data/tools';
 
 const QrCodeScannerPage = lazy(() => import('../pages/tools/QrCodeScannerPage'));
@@ -111,6 +112,7 @@ export default function AppRoutes() {
         <Route path="/image-tools/base64-to-image" element={<Base64ToImagePage />} />
         <Route path="/image-tools/image-to-pdf" element={<ImageToPdfPage />} />
         <Route path="/image-tools/pdf-to-image" element={<PdfToImagePage />} />
+        <Route path="/image-tools/image-watermark" element={<ImageWatermarkPage />} />
 
         {/* Placeholder tool routes */}
         {tools

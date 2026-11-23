@@ -523,6 +523,15 @@ export const tools: Tool[] = [
     route: "/design/svg-tools",
     status: "coming-soon",
   },
+  {
+    id: "image-watermark",
+    name: "Image Watermark Tool",
+    description: "Add text or logo watermarks to images locally in your browser.",
+    category: "design",
+    icon: "stamp",
+    route: "/image-tools/image-watermark",
+    status: "available",
+  },
 
   // ── Business ───────────────────────────────────────────────────────────
   {
