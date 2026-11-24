@@ -532,6 +532,15 @@ export const tools: Tool[] = [
     route: "/image-tools/image-watermark",
     status: "available",
   },
+  {
+    id: "image-metadata-viewer",
+    name: "Image Metadata Viewer",
+    description: "Inspect image properties and metadata locally in your browser. No uploads required.",
+    category: "design",
+    icon: "file-image",
+    route: "/image-tools/image-metadata-viewer",
+    status: "available",
+  },
 
   // ── Business ───────────────────────────────────────────────────────────
   {
