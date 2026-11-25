@@ -43,6 +43,7 @@ import ImageToPdfPage from '../pages/tools/ImageToPdfPage';
 import PdfToImagePage from '../pages/tools/PdfToImagePage';
 import ImageWatermarkPage from '../pages/tools/ImageWatermarkPage';
 import ImageMetadataViewerPage from '../pages/tools/ImageMetadataViewerPage';
+import ImageBackgroundRemoverPage from '../pages/tools/ImageBackgroundRemoverPage';
 import { categories, tools } from '../data/tools';
 
 const QrCodeScannerPage = lazy(() => import('../pages/tools/QrCodeScannerPage'));
@@ -115,6 +116,7 @@ export default function AppRoutes() {
         <Route path="/image-tools/pdf-to-image" element={<PdfToImagePage />} />
         <Route path="/image-tools/image-watermark" element={<ImageWatermarkPage />} />
         <Route path="/image-tools/image-metadata-viewer" element={<ImageMetadataViewerPage />} />
+        <Route path="/image-tools/background-remover" element={<ImageBackgroundRemoverPage />} />
 
         {/* Placeholder tool routes */}
         {tools

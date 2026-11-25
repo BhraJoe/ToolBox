@@ -1,0 +1,246 @@
+.image-background-remover {
+  --remover-accent: #0f766e;
+  width: 100%;
+  color: var(--text-primary);
+}
+
+.image-background-remover__toolbar,
+.image-background-remover__panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.image-background-remover__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 10px 12px;
+}
+
+.image-background-remover__local {
+  color: #15803d;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.image-background-remover__panel {
+  padding: 18px;
+}
+
+.image-background-remover__dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 132px;
+  padding: 20px;
+  border: 1px dashed color-mix(in srgb, var(--remover-accent) 50%, var(--border-color));
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--remover-accent) 4%, var(--bg-secondary));
+}
+
+.image-background-remover__dropzone--active {
+  border-color: var(--remover-accent);
+  background: color-mix(in srgb, var(--remover-accent) 10%, var(--bg-card));
+}
+
+.image-background-remover__upload-icon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--remover-accent) 10%, var(--bg-card));
+  color: var(--remover-accent);
+}
+
+.image-background-remover__dropzone > div:nth-child(2) {
+  display: grid;
+  min-width: 220px;
+  gap: 3px;
+}
+
+.image-background-remover__dropzone strong { font-size: 13px; }
+.image-background-remover__dropzone span { color: var(--text-secondary); font-size: 12px; }
+.image-background-remover__file-input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+
+.image-background-remover__button,
+.image-background-remover__brushes button,
+.image-background-remover__brush-actions button,
+.image-background-remover__background-upload,
+.image-background-remover__background-options button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 37px;
+  padding: 8px 11px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.image-background-remover__button--primary {
+  border-color: var(--remover-accent);
+  background: var(--remover-accent);
+  color: #fff;
+}
+
+.image-background-remover__button--primary:hover:not(:disabled),
+.image-background-remover__brushes button.active,
+.image-background-remover__background-options button.active {
+  border-color: var(--remover-accent);
+  background: color-mix(in srgb, var(--remover-accent) 12%, var(--bg-card));
+  color: var(--remover-accent);
+}
+
+.image-background-remover__button--primary:hover:not(:disabled) { background: color-mix(in srgb, var(--remover-accent) 88%, black); color: #fff; }
+.image-background-remover__button:disabled,
+.image-background-remover__brush-actions button:disabled { cursor: not-allowed; opacity: 0.5; }
+
+.image-background-remover__message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  border: 1px solid;
+  border-radius: var(--radius);
+  font-size: 13px;
+}
+
+.image-background-remover__message--success { border-color: #16a34a55; background: #16a34a12; color: #15803d; }
+.image-background-remover__message--error { border-color: #dc262655; background: #dc262612; color: #dc2626; }
+.image-background-remover__message button { display: grid; width: 28px; height: 28px; place-items: center; color: inherit; }
+
+.image-background-remover__progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.image-background-remover__progress > div { flex: 1; }
+.image-background-remover__progress strong { font-size: 13px; }
+.image-background-remover__progress small { color: var(--text-secondary); }
+.image-background-remover__progress-track { height: 6px; margin: 7px 0 3px; overflow: hidden; border-radius: 999px; background: var(--bg-secondary); }
+.image-background-remover__progress-track span { display: block; height: 100%; border-radius: inherit; background: var(--remover-accent); transition: width 180ms ease; }
+.image-background-remover__spin { animation: remover-spin 900ms linear infinite; }
+@keyframes remover-spin { to { transform: rotate(360deg); } }
+
+.image-background-remover__workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 16px;
+  align-items: start;
+}
+
+.image-background-remover__controls { display: grid; gap: 16px; }
+.image-background-remover__section-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.image-background-remover__section-heading span { display: block; color: var(--remover-accent); font-size: 10px; font-weight: 750; letter-spacing: 0.08em; text-transform: uppercase; }
+.image-background-remover__section-heading h2 { margin-top: 3px; font-size: 16px; }
+.image-background-remover__section-heading small { color: var(--text-secondary); font-size: 11px; }
+
+.image-background-remover__comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.image-background-remover__comparison-pane {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+}
+
+.image-background-remover__comparison-pane > img,
+.image-background-remover__canvas-stage {
+  display: block;
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+}
+
+.image-background-remover__canvas-stage {
+  display: grid;
+  min-height: 240px;
+  place-items: center;
+  background-image:
+    linear-gradient(45deg, #d8dde3 25%, transparent 25%),
+    linear-gradient(-45deg, #d8dde3 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #d8dde3 75%),
+    linear-gradient(-45deg, transparent 75%, #d8dde3 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+}
+
+[data-theme="dark"] .image-background-remover__canvas-stage {
+  background-image:
+    linear-gradient(45deg, #30343a 25%, transparent 25%),
+    linear-gradient(-45deg, #30343a 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #30343a 75%),
+    linear-gradient(-45deg, transparent 75%, #30343a 75%);
+}
+
+.image-background-remover__canvas-stage canvas { width: 100%; max-height: 520px; object-fit: contain; touch-action: none; cursor: crosshair; }
+.image-background-remover__label { position: absolute; z-index: 2; top: 8px; left: 8px; padding: 5px 8px; border-radius: 999px; background: color-mix(in srgb, var(--bg-card) 88%, transparent); font-size: 10px; font-weight: 700; }
+.image-background-remover__empty-preview { display: grid; place-items: center; gap: 6px; min-height: 240px; color: var(--text-secondary); font-size: 12px; }
+
+.image-background-remover__slider { position: relative; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 10px; margin-top: 12px; color: var(--text-secondary); font-size: 11px; }
+.image-background-remover__slider input { width: 100%; accent-color: var(--remover-accent); }
+.image-background-remover__comparison-reveal { display: none; }
+
+.image-background-remover__brushes,
+.image-background-remover__background-options,
+.image-background-remover__brush-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.image-background-remover__brushes button.active { background: var(--remover-accent); color: #fff; }
+.image-background-remover__range,
+.image-background-remover__select { display: grid; gap: 7px; margin-bottom: 12px; color: var(--text-secondary); font-size: 11px; }
+.image-background-remover__range strong { color: var(--text-primary); }
+.image-background-remover__range input,
+.image-background-remover__select select { accent-color: var(--remover-accent); }
+.image-background-remover__select select { width: 100%; height: 38px; border: 1px solid var(--border-color); border-radius: var(--radius); background: var(--bg-primary); color: var(--text-primary); }
+.image-background-remover__brush-actions { grid-template-columns: 38px 38px 1fr; }
+.image-background-remover__brush-actions button:last-child { width: 100%; }
+
+.image-background-remover__background-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.image-background-remover__background-options button { min-width: 0; }
+.image-background-remover__background-options button.transparent::before { content: ""; width: 12px; height: 12px; border: 1px solid var(--border-color); background: conic-gradient(#aaa 25%, #fff 0 50%, #aaa 0 75%, #fff 0); background-size: 8px 8px; }
+.image-background-remover__background-options button.white { background: #fff; color: #111; }
+.image-background-remover__background-options button.black { background: #111; color: #fff; }
+.image-background-remover__background-options button.custom input { width: 20px; height: 20px; padding: 0; border: 0; background: transparent; }
+.image-background-remover__background-upload { width: 100%; }
+.image-background-remover__output-info { display: block; margin-top: 9px; color: var(--text-secondary); font-size: 10px; }
+.controls button:focus-visible,
+.image-background-remover button:focus-visible,
+.image-background-remover input:focus-visible,
+.image-background-remover select:focus-visible { outline: 3px solid color-mix(in srgb, var(--remover-accent) 30%, transparent); outline-offset: 2px; }
+
+@media (max-width: 980px) {
+  .image-background-remover__workspace { grid-template-columns: 1fr; }
+  .image-background-remover__controls { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 720px) {
+  .image-background-remover__dropzone { flex-direction: column; text-align: center; }
+  .image-background-remover__dropzone > div:nth-child(2) { min-width: 0; }
+  .image-background-remover__comparison { grid-template-columns: 1fr; }
+  .image-background-remover__controls { grid-template-columns: 1fr; }
+  .image-background-remover__canvas-stage { min-height: 210px; }
+}
