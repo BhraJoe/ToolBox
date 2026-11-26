@@ -1,0 +1,343 @@
+.image-blur {
+  width: 100%;
+  color: var(--text-primary);
+}
+
+.image-blur__upload,
+.image-blur__workspace,
+.image-blur__panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.image-blur__upload {
+  padding: 20px;
+  margin-bottom: 18px;
+}
+
+.image-blur__dropzone {
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px;
+  border: 1px dashed color-mix(in srgb, var(--color-primary) 45%, var(--border-color));
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+}
+
+.image-blur__dropzone--active {
+  border-color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 8%, var(--bg-card));
+}
+
+.image-blur__upload-icon {
+  color: var(--color-primary);
+}
+
+.image-blur__dropzone h2 {
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+
+.image-blur__dropzone p {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.image-blur__file-input {
+  display: none;
+}
+
+.image-blur__workspace {
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.image-blur__toolbar {
+  min-height: 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.image-blur__toolbar-group,
+.image-blur__selection-tools,
+.image-blur__selection-actions,
+.image-blur__actions,
+.image-blur__dimensions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.image-blur__zoom-label {
+  min-width: 42px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.image-blur__preview-frame {
+  height: 480px;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(45deg, var(--bg-tertiary) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--bg-tertiary) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--bg-tertiary) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--bg-tertiary) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+}
+
+.image-blur__canvas-wrap {
+  position: relative;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-blur__canvas {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  touch-action: none;
+  background: transparent;
+  box-shadow: var(--shadow-md);
+}
+
+.image-blur__compare-original {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  max-width: 100%;
+  max-height: 100%;
+  transform: translate(-50%, -50%);
+  clip-path: inset(0 50% 0 0);
+  object-fit: contain;
+  pointer-events: none;
+  box-shadow: var(--shadow-md);
+}
+
+.image-blur__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 18px;
+}
+
+.image-blur__panel {
+  padding: 18px;
+}
+
+.image-blur__panel h2 {
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 16px;
+}
+
+.image-blur__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0 6px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.image-blur__select,
+.image-blur__slider {
+  width: 100%;
+}
+
+.image-blur__select {
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.image-blur__slider {
+  accent-color: var(--color-primary);
+}
+
+.image-blur__segmented,
+.image-blur__toggle-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.image-blur__segment,
+.image-blur__toggle,
+.image-blur__icon-button,
+.image-blur__button {
+  min-height: 34px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all var(--transition);
+}
+
+.image-blur__segment,
+.image-blur__toggle {
+  padding: 7px 8px;
+  font-size: 12px;
+}
+
+.image-blur__segment--active,
+.image-blur__toggle--active,
+.image-blur__icon-button--active {
+  border-color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 10%, var(--bg-card));
+  color: var(--color-primary);
+}
+
+.image-blur__icon-button {
+  width: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-blur__selection {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.image-blur__selection-actions,
+.image-blur__actions {
+  margin-top: 12px;
+}
+
+.image-blur__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 10px;
+  font-size: 12px;
+}
+
+.image-blur__button--primary,
+.image-blur__download {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--text-on-primary);
+  font-weight: 650;
+}
+
+.image-blur__button:disabled,
+.image-blur__download:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.image-blur__background {
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+}
+
+.image-blur__background p {
+  margin-top: 8px;
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+.image-blur__dimensions {
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.image-blur__download {
+  width: 100%;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  border-radius: var(--radius-sm);
+}
+
+.image-blur__status {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+}
+
+.image-blur__status--success {
+  background: color-mix(in srgb, #16a34a 12%, var(--bg-card));
+  color: #16a34a;
+}
+
+.image-blur__status--error {
+  background: color-mix(in srgb, #dc2626 12%, var(--bg-card));
+  color: #dc2626;
+}
+
+.image-blur__status--info {
+  background: color-mix(in srgb, var(--color-primary) 10%, var(--bg-card));
+  color: var(--color-primary);
+}
+
+.image-blur__spin {
+  animation: image-blur-spin 0.8s linear infinite;
+}
+
+@keyframes image-blur-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 900px) {
+  .image-blur__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .image-blur__preview-frame {
+    height: 390px;
+  }
+}
+
+@media (max-width: 620px) {
+  .image-blur__dropzone {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-blur__toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .image-blur__preview-frame {
+    height: 300px;
+  }
+
+  .image-blur__segmented {
+    grid-template-columns: 1fr;
+  }
+}

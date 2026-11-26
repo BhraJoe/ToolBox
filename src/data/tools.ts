@@ -548,6 +548,15 @@ export const tools: Tool[] = [
     route: "/image-tools/background-remover",
     status: "available",
   },
+  {
+    id: "image-blur",
+    name: "Image Blur Tool",
+    description: "Blur entire images or selected areas with adjustable blur effects.",
+    category: "image-tools",
+    icon: "image",
+    route: "/image-tools/image-blur",
+    status: "available",
+  },
 
   // ── Business ───────────────────────────────────────────────────────────
   {
