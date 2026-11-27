@@ -557,6 +557,15 @@ export const tools: Tool[] = [
     route: "/image-tools/image-blur",
     status: "available",
   },
+  {
+    id: "image-pixelate",
+    name: "Image Pixelate Tool",
+    description: "Pixelate entire images or selected areas to create mosaic effects and hide sensitive details.",
+    category: "image-tools",
+    icon: "image",
+    route: "/image-tools/image-pixelate",
+    status: "available",
+  },
 
   // ── Business ───────────────────────────────────────────────────────────
   {
