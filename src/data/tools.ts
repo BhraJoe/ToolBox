@@ -566,6 +566,15 @@ export const tools: Tool[] = [
     route: "/image-tools/image-pixelate",
     status: "available",
   },
+  {
+    id: "image-color-picker",
+    name: "Image Color Picker",
+    description: "Extract colors from images, inspect pixel values, and generate reusable color palettes.",
+    category: "image-tools",
+    icon: "pipette",
+    route: "/image-tools/image-color-picker",
+    status: "available",
+  },
 
   // ── Business ───────────────────────────────────────────────────────────
   {
