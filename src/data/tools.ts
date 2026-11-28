@@ -575,6 +575,15 @@ export const tools: Tool[] = [
     route: "/image-tools/image-color-picker",
     status: "available",
   },
+  {
+    id: "image-color-palette-generator",
+    name: "Image Color Palette Generator",
+    description: "Extract, customize, and export color palettes from images.",
+    category: "image-tools",
+    icon: "palette",
+    route: "/image-tools/color-palette-generator",
+    status: "available",
+  },
 
   // ── Business ───────────────────────────────────────────────────────────
   {
